@@ -1,8 +1,5 @@
 ---
 - name: Copia di un file
-  hosts: all
-  remote_user: servermanager
-  become: yes
 
   tasks:
     - name: Copia il file di configurazione 1
