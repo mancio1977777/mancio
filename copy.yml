@@ -9,7 +9,7 @@
   tasks:
     - name: Copia il file di configurazione 1
       copy:
-        src: /root/1
+        src: /home/ansible/1
         dest: /root
         owner: root
         group: root
