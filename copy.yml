@@ -9,7 +9,7 @@
   tasks:
     - name: Copia il file di configurazione 1
       copy:
-        src: /home/ansible/1
+        src: /var/lib/awx/projects/1/copy_file_1.yml
         dest: /root
         owner: root
         group: root
