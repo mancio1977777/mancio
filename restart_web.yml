@@ -1,0 +1,17 @@
+---
+- name: Restart Apache
+  hosts: all
+  become: yes  # Ensure privilege escalation
+
+  tasks:
+    - name: Restart Apache on Debian/Ubuntu
+      ansible.builtin.service:
+        name: apache2
+        state: restarted
+      when: ansible_os_family == 'Debian' or ansible_os_family == 'Ubuntu'
+
+    - name: Restart Apache on CentOS/RHEL
+      ansible.builtin.service:
+        name: httpd
+        state: restarted
+      when: ansible_os_family == 'RedHat' or ansible_os_family == 'CentOS'
