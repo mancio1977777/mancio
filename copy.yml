@@ -1,0 +1,16 @@
+---
+- name: Copia di un file
+  hosts: all
+  remote_user: servermanager
+  vars_files:
+    - /etc/ansible/connection_password
+  become: yes
+
+  tasks:
+    - name: Copia il file di configurazione 1
+      copy:
+        src: /root/1
+        dest: /root
+        owner: root
+        group: root
+        mode: '0400'
